@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignmet_1_que_3</title>
+    <script> 
+        function getDate(){
+            var today = new Date()
+            var dd = today.getDate()
+            var mm = today.getMonth()+1
+            var yyyy = today.getFullYear()
+            document.getElementById("ans").innerHTML = `<h3>Output</h3>
+                                                        <p> ${mm}-${dd}-${yyyy} </p>
+                                                         <p> ${mm}/${dd}/${yyyy} </p>
+                                                         <p> ${dd}-${mm}-${yyyy} </p>
+                                                         <p> ${dd}/${mm}/${yyyy} </p>`
+        }
+    </script>
+</head>
+<body>
+    <p>Problem statement :</p>
+    <p>write a javascript program to print current date into following manner</p>
+    <br>
+    <p>Expected output :</p>
+    <p>mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy , dd/mm/yyyy</p>
+
+    <button id="dateBtn">click to get current date</button>
+    <p id="ans"></p>
+
+    <script>
+        document.getElementById("dateBtn").addEventListener('click', getDate)
+    </script>
+</body>
+</html>

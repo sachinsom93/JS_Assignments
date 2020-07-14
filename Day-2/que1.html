@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment_1_que_1</title>
+    <script>
+        function getDate(){
+            var Today = new Date();
+    
+
+            // for day name
+            var day = Today.getDay()
+            week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+            var week_day = week[day]
+            
+
+            // for time 
+            var hour = Today.getHours()
+            var suffix = (hour >= 12) ? " PM " : " AM "
+            hour = (hour >= 12) ? hour - 12 : hour
+            var min = Today.getMinutes()
+            var sec = Today.getSeconds()
+            if( hour == 0 && min == 0 && sec == 0 && suffix == " PM "){
+                hour = 12;
+                suffix = " NOON "
+            }
+            else{
+                // hour = 12;
+                suffix = " PM "
+            }
+            if( hour == 0 && min == 0 && sec == 0 && suffix == " AM "){
+                hour = 12;
+                suffix = " MIDNIGHT "
+            }
+            else{
+                // hour = 12;
+                suffix = " AM "
+            }
+            document.getElementById("date").innerHTML = `<p>Today is : ${week_day}</p>
+                                                        <p> Current time is : ${hour} ${suffix} : ${min} : ${sec} </p> ` 
+        }
+    </script>
+</head>
+<body>
+    <p>problem statemet: <br> Write a javascript program to display the current day and time in the following format</p>
+    <button id="mybtn">Click to get current date </button>
+    <p id="date"></p>
+    <script>
+        var dateBtn = document.getElementById("mybtn")
+        dateBtn.addEventListener("click", getDate)
+        
+    </script>
+</body>
+</html>
