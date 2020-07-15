@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Console methods</title>
+    </head>
+    <body>
+        <h1>Console Methods</h1>
+        <b>Console.log()</b><br><P>this function is used to log(print) the output in the Console</P>
+        <b>Console.error()</b><br><P>this function is used to log(print) the errro message in the Console</P>
+        <b>Console.warn()</b><br><P>this function is used to log(print) the warn message in the Console</P>
+        <b>Console.clear()</b><br><P>this function is used to clear the Console</P>
+        <b>Console.time() and console.timeEnd()</b><br><P>Both of this functions is used to find out the time spend on execution of a funciton</P>
+        <b>Console.table()</b><br><P>this function is used to generate tables in the Console</P>
+        <b>Console.count()</b><br><P>This method is used to count the number that the function hit by this counting method.</P>
+        <b>console.group() and console.groupEnd()</b><br><P>group() and groupEnd() methods of the console object allows us to group contents in a separate block, which will be indented.</P>
+        <b>custom console logs</b><br><p>User can style the console logs</p>
+        <b>NOTE:: </b><p>For execution of the above methods open your brower's console</p>
+        <script>
+            //1. console.clear()
+            console.clear()
+
+            // 2. console.log()
+            console.log("console.log() is used to log output in the console")
+
+
+            // 3. console.error()
+            console.error("console.error() is used to log error message in the console")
+
+
+            // 4. console.warn()
+            console.warn("console.warn() is used to log warn message in the console")
+
+
+            // 5. console.time() and console.timeEnd()
+            console.time()
+            for(let i = 0; i< 10; i++){
+                console.log(i)
+            }
+            console.timeEnd()
+            
+
+            // 6. console.table()
+            let intro = { 
+                "name" : "sachin", 
+                "age"  : 20,
+                "city" : "jaipur"
+            }
+            let intro2 = { 
+                "name" : "vrinda", 
+                "age"  : 18,
+                "city" : "jaipur"
+            }
+            console.table({intro , intro2})
+
+
+            // 7. console.count()
+            for(let i= 0; i< 5; i++){
+                console.count(i)
+            }
+
+
+            // 8. console.group() and console.groupEnd()
+            console.group("Some console methods")
+            console.log("console.log()")
+            console.error("console.error()")
+            console.warn("console.warn()")
+            console.count("console.count()")
+            console.table({"name":"sachin", "city":"jaipur"})
+            console.groupEnd()
+
+
+            // 9. custom console logs
+            console.log("%c This console message is styled customly", "color: blue ; font-family: sans-serif")
+        </script>
+    </body>
+</html>

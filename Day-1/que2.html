@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <b>Var</b><br>
+        <p>var is a function or global scope level variable.</p>
+        <p>If var is used inside a function, it's scope is function level and it can be accessed only within the function.</p>
+        <p>And, if it is declared outside of a function, then it's scope is global.</p>
+
+        <b>let</b><br>
+        <p>A variable declared in a block with let  is only available for use within that block.</p>
+        <p>A block is a chunk of code bounded by {}. A block lives in curly braces. Anything within curly braces is a block.</p>
+
+        <b>const</b><br>
+        <p>Variables declared with the const maintain constant values.</p>
+        <p>The value of a variable declared with const remains the same within its scope. It cannot be updated or re-declared. So if we declare a variable with const.</p>
+        <script>
+            // 1. use of var 
+            var s = 'jaipur'
+            function city(){
+                var s = 'jodhpur'
+                console.log("Value of var inside the function :", s)
+            }
+            city()
+            console.log("Value of var Outside the function :", s)
+
+
+            // 2. use of let  
+            let a = 4
+            if( a == 4){
+                let b = 5
+                console.log(b)
+            }
+            // console.log(b)  // it will throw an error saying that b is not defined
+
+            // 3. const
+            const c = 34
+            console.log(c)
+            c = 2 // const is not assignable
+        </script>
+    </body>
+</html>
