@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>Open your console to see the examples related to string methods</h1>
+    </main>
+    <script>
+        let str = "sachin"
+
+        // big() is used to add a big tag around str
+        console.log(str.big())
+
+        // blink() is used to add a blink tag around str
+        console.log(str.blink())
+
+        // bold() is used to add a bold tag around str
+        console.log(str.bold())
+
+        // charAt() will find the charater that is exist on that particular index in str
+        console.log(str.charAt(2))
+
+        // charCodeAt() will find out the unicode of particular string on given index
+        console.log(str.charCodeAt(3))
+        console.log(str.codePointAt(0))
+
+        // concat() is used to concatenate two strings
+        console.log(str.concat(" som"))
+
+        // this methods check if a string is ends with given string or not and provides boolean ans
+        console.log(str.endsWith("n"))
+
+        // this methods adds a <tt> tag around string
+        console.log(str.fixed())
+
+        // this method adds a style of fontcolor
+        console.log(str.fontcolor("red"))
+
+        // this method adds a style of fontsize
+        console.log(str.fontsize(23))
+
+        // this methods check if given string is included on our main string or not
+        console.log(str.includes("s"))
+
+        // find out the index of given string
+        console.log(str.indexOf("s"))
+
+        // adds <i> tag to string
+        console.log(str.italics())
+
+        // find out last index of given string
+        console.log(str.lastIndexOf('s'))
+
+        // find out the length of associated string
+        console.log(str.length)
+
+        // adds a href to given string
+        console.log(str.link("http://github.com/sachinsom93"))
+
+        // compares a given string with our main string
+        console.log(str.localeCompare("som"))
+
+        // used to normalize the string according given forms
+        console.log(str.normalize( "NFKD"))
+
+        // repeats given string
+        console.log(str.repeat(4))
+
+        // make a shallow copy of our main string and replace given string with main strig
+        console.log(str.replace("s", "m"), str)
+
+        // find out the index of given string in our main string
+        console.log(str.search("s"))
+
+        // used to slice the string
+        console.log(str.slice(0, 1), str)
+
+        // adds a small tag around string
+        console.log(str.small())
+
+        // used to convert a string into a array using the separator
+        console.log(str.split(""))
+
+        // adds a strike tag to str 
+        console.log(str.strike())
+
+        // adds a sub tag
+        console.log(str.sub())
+
+        // used to create a sub string by passing starting index and length
+        console.log(str.substr(0, 3))
+
+        // used to create a sub string by passing starting and ending index
+        console.log(str.substring(0, 3))
+
+        // to add a sub tag to string
+        console.log(str.sup())
+
+        // to convering into lowercase
+        console.log(str.toLowerCase())
+
+        // to converting into uppercase
+        console.log(str.toUpperCase())
+
+        // to trim whitespaces in string
+        console.log(str.trim())
+        
+    </script>
+</body>
+</html>
