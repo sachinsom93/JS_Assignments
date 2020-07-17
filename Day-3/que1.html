@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>question-1</title>
+    </head>
+    <body>
+        <main>
+            <h1>problem statment :</h1>
+            <p>Take a number from the user and write a function which checks wether the no is even or odd. Assign the result into a variable and log the variable to the console.</p>
+            <input type="number" id="no" placeholder="Enter a Number to check" >
+            <button id="btn">Check</button>
+            <div id="output" style="font-weight: bold; color: blue; margin-top: 20px;"></div>
+            <script>
+                document.getElementById("btn").addEventListener("click", () => {
+                let input = document.getElementById("no").value
+                if(! input){
+                
+                    document.getElementById("output").innerHTML = "Please enter a number to check wether it is odd or even ."
+                }
+                else if( input % 2 == 0){
+                    document.getElementById("output").innerHTML = ` Your given number ${input} is even`
+                    document.getElementById("no").value = null
+                }
+                else{
+                    document.getElementById("output").innerHTML = ` Your given number ${input} is odd`
+                    document.getElementById("no").value = null
+                }
+                    
+                })
+                
+            </script>
+        </main>
+    </body>
+</html>
