@@ -1,2 +1,2 @@
 # JS_Assignments
-Daywise Assignments of javascript Essential 
+Daywise Assignments of javascript Essential Program 
