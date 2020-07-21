@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+</head>
+<body>
+    <b>Problem statement 3</b>
+    <p>Use Promises/async await/fetch get the random todos form the json placeholder api.And log all the completed todos to the console.</p>
+    <p>API endpoint: <a href="https://jsonplaceholder.typicode.com/todos">link</a> </p>
+    <br>
+    <br>
+    <mark>Note: </mark>open your console to get todos.
+    <script>
+        fetch("https://jsonplaceholder.typicode.com/todos")
+            .then((Response) => {
+                return Response.json()
+            })
+                .then((blob) => {
+                    console.log(blob[Math.floor(Math.random() *199)])
+                    console.log("%c Completed todos", "background-color:black; color:white; font-weight:bolder;")
+                })
+                    .catch((err) => {
+                        console.error(err)
+                    })
+
+        // for logging all the completed todos
+        async function todos(){
+            let response = await fetch("https://jsonplaceholder.typicode.com/todos")
+            let todos = await response.json()
+            todos.forEach((value, index) => {
+                if( value.completed == true){
+                    console.log(value)
+                }
+            })
+        }
+
+
+        todos()
+            .then(() => {
+                console.log("Printed all completed todos")
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    </script>
+</body>
+</html>

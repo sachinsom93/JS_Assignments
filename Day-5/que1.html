@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+</head>
+<body>
+    <b>Probleme statement</b>
+    <p>Takes a postive number form the user.</p>
+    <p>Makes a array of numbers till the end of given number by user.</p>
+    <p>Use higher order function to filter Odd numbers.</p>
+    <p>generate an array of cubes of filtered numbers.</p>
+    <script>
+        let input = prompt("Enter a postive number.")
+        let arr = []
+
+        // handing negative numbers
+        while(input < 0){
+            input = prompt("You can only enter a postive number.")
+        }
+
+        // create an array till the end of input number
+        for( let i = 0; i <= input; i++){
+            arr.push(i)
+        }
+
+        // filter odd numbers 
+        let filtered = arr.filter((value, index, array) => {
+            return (value % 2 != 0)
+        })
+
+        // create a new array of cubes of odd numbers
+        let cubes = []
+        filtered.forEach((value, index) => {
+            cubes.push(Math.pow(value, 3))
+        })
+
+
+        // log all the arrays 
+        console.log("Array till the end of input number", arr)
+        console.log("Array containing odd numbers", filtered)
+        console.log("Array of cubes of odd numbers", cubes)
+    </script>
+</body>
+</html>

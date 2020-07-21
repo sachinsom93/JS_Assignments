@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+</head>
+<body>
+    <b>Problem statement 2</b>
+    <p>Create a class user that have properties like name, age and email.</p>
+    <p>He can login and logout</p>
+    <p>Create another class moderator which has all features of user plus additional functionality to add coins and remove coins.</p>
+    <p>Create one more class Admin which has all the features of moderator plus additional features like add a Course and delete course for a user.</p>
+
+
+    <script>
+
+
+        // user class
+        class user{
+            
+            constructor(name, age, email){
+                this.storage = []
+                this.name = name;
+                this.age = age;
+                this.email = email
+                this.storage.push({"name" : this.name, "age" : this.age, "email" : this.email})
+
+            }
+
+            login(name, age, email) {
+                if( name == this.name && age == this.age && email == this.email){
+                    console.log(`${this.name},You are logged in.`)
+                }
+                else{
+                    console.log("you have entered wrong inforamtion.")
+                }
+            }
+
+            logout(){
+                console.log(`${this.name}, You are logged out.`)
+            }
+        }
+
+
+        // moderator class
+        class moderator extends user{
+            coins = 0
+            constructor(name, age, email){
+                super(name, age, email)
+            }
+            addCoin(){
+                this.coins += 1
+                console.log(`Now, you have ${this.coins} coins.`)
+            }
+            removeCoins(){
+                if( this.coins > 0){
+                    this.coins -= 1
+                    console.log(`you have removed one coins, Now you have ${this.coins} coins`)
+                }
+                else{
+                    console.log(`Sorry! you don't have coin to remove coins, add coins using addCoins()`)
+                }
+            }
+        }
+
+
+        // admin class
+        class admin extends moderator{
+            courses = []
+            constructor(name, age, email){
+                super(name, age, email)
+            }
+            addCourse(...course){
+                course.forEach((value, index) => {
+                    this.courses.push(value)
+                })
+                console.log(`you have added a course for ${this.name}, Now he have these courses.`)
+                this.courses.forEach((value, index, arr) => {
+                    console.log(value)
+                })
+            }
+
+            deleteCourse(course){
+                if( this.courses.length < 1){
+                    console.log(`${this.name} don't have any course to delete, you can add course by using addCourse().`)
+                    
+                }
+                else if(this.courses.indexOf(course) == -1){
+                    console.log(`${this.name} don't have ${course}.`)
+                }
+                else{
+                    this.courses.splice(course, 1)
+                    console.log(`${course} has been removed.`)
+                }
+            }
+
+        }
+
+
+        // for displaying objects
+        let user1 = new user("sachin", 20, "sachin@gmail.com")
+        user1.login("sachin", 20, "sachin@gmail.com")
+        user1.logout()
+        let mod1 = new moderator("sachin", 20, "sachin@")
+        mod1.addCoin()
+        mod1.addCoin()
+        mod1.addCoin()
+        mod1.removeCoins()
+        let admin1 = new admin("sachin", 20, "sachin1002@gmail.com")
+        admin1.name
+        admin1.addCourse("java", "python", "javascript")
+        admin1.deleteCourse("java")
+        console.log(admin1.courses)
+    </script>
+</body>
+</html>
