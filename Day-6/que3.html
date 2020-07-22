@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+    <style>
+        .dark{
+            background-color: black;
+            color: white;
+        }
+        .darkbtn{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <b>Problem statement 3</b>
+    <p>Make a program that will ask the user about the name and then will display a welcome message on the webpage. Also the webpage should have a clock.</p>
+    <p>Also , using toggle method of the classList and a dark mode feature on the webpage.</p>
+    <button id="btn" class="darkbtn">Try dark mode</button>
+    <h2 id='welcome'></h2>
+    <h2 id="time"></h2>
+    <script>
+        let name = prompt("Enter your name.")
+        while( !name){
+            name = prompt("Please! Enter your name")
+        }
+
+        // for welcome message
+        document.getElementById("welcome").innerHTML = `Welcome to letsupgrade ${name}`
+
+
+        // for clock
+        let myclock = setInterval(clock, 1000)
+        function clock(){
+            let date = new Date()
+            let t = date.toLocaleTimeString()
+            document.getElementById("time").innerHTML = t
+        }
+
+        // for dark mode 
+        let btn = document.getElementById("btn")
+        btn.addEventListener("click", (btn) => {
+            document.body.classList.toggle("dark")
+            btn.target.classList.toggle("darkbtn")
+            if( document.body.className == "dark"){
+                btn.target.innerHTML = "back to normal mode"
+            }
+            else{
+                btn.target.textContent = "Try dark mode"
+            }
+        })
+
+    </script>
+</body>
+</html>

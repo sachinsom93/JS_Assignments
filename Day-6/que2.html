@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+</head>
+<body>
+    <b>Problem statement 2</b>
+    <p>Write a program that will display the multiplication table of a number on the webpage in a proper format. Take the input from the user.</p>
+    <label>Enter a number</label>
+    <input type="text"  id="no" >
+    <button id="btn">Click to get the table on the webpage</button>
+    <div id="output"></div>
+    
+    <script>
+        let btn = document.getElementById("btn")
+        btn.onclick = () => {
+            let out = '';
+            let no = document.getElementById("no").value
+            for( let i = 1 ; i <= 10 ; i++){
+                out += `<h3>${no} ✕ ${i} = ${no * i}</h3>`
+            }
+            document.getElementById("output").innerHTML = out
+        }
+    </script>
+    
+</body>
+</html>
